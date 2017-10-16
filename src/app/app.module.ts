@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MdProgressBarModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material';
 
 import { AppRoutingModule }    from './app-routing.module';
 import { AuthGuard } from './auth.guard';
 import { UsersResolve } from './users.resolve';
+import { UserResolve } from './user.resolve';
 
 import { UtilService } from './util.service';
 import { AuthService } from './auth.service';
@@ -19,6 +20,8 @@ import { Error404Component } from './error404/error404.component';
 import { LoginComponent } from './login/login.component';
 import { UserNewComponent } from './user-new/user-new.component';
 import { UserIndexComponent } from './user-index/user-index.component';
+import { UserShowComponent } from './user-show/user-show.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { UserIndexComponent } from './user-index/user-index.component';
     LoginComponent,
     UserNewComponent,
     UserIndexComponent,
+    UserShowComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,7 @@ import { UserIndexComponent } from './user-index/user-index.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MdProgressBarModule,
+    MatProgressBarModule,
   ],
   providers: [
     {
@@ -48,6 +53,7 @@ import { UserIndexComponent } from './user-index/user-index.component';
     AuthService,
     UserService,
     UsersResolve,
+    UserResolve,
   ],
   bootstrap: [AppComponent]
 })
