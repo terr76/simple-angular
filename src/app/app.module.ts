@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MatProgressBarModule } from '@angular/material';
+import { MdProgressBarModule } from '@angular/material';
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 import { AppRoutingModule }    from './app-routing.module';
 import { AuthGuard } from './auth.guard';
@@ -40,7 +41,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatProgressBarModule,
+    MdProgressBarModule,
+    LocalStorageModule.withConfig({storageType: 'localStorage'}),
   ],
   providers: [
     {
